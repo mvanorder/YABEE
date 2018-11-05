@@ -388,8 +388,8 @@ class ExportPanda3DEGG(bpy.types.Operator, ExportHelper):
     #    return len(context.selected_objects) > 0
 
     def execute(self, context):
-        import imp
-        imp.reload(egg_writer)
+        import importlib
+        importlib.reload(egg_writer)
         sett = context.scene.yabee_settings
         errors = egg_writer.write_out(self.filepath,
                             sett.opt_anim_list.get_anim_dict(),

@@ -78,8 +78,8 @@ if __name__ == '__main__':
     import io_scene_egg.yabee_libs.egg_writer
     #from io_scene_egg.yabee_libs import egg_writer
     print('RELOADING MODULES')
-    import imp
-    imp.reload(io_scene_egg.yabee_libs.egg_writer)
+    import importlib
+    importlib.reload(io_scene_egg.yabee_libs.egg_writer)
     egg_writer = io_scene_egg.yabee_libs.egg_writer
 
     egg_write.write_out(FILE_PATH,

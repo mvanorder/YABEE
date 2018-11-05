@@ -9,13 +9,13 @@ from math import pi
 from .texture_processor import SimpleTextures, TextureBaker, RawTextures
 from .utils import *
 import subprocess
-import imp
+import importlib
 from traceback import format_tb, print_exc
 
 
 lib_name = '.'.join(__name__.split('.')[:-1])
-imp.reload(sys.modules[lib_name + '.texture_processor'])
-imp.reload(sys.modules[lib_name + '.utils'])
+importlib.reload(sys.modules[lib_name + '.texture_processor'])
+importlib.reload(sys.modules[lib_name + '.utils'])
 
 
 FILE_PATH = None
@@ -1492,8 +1492,8 @@ def write_out(fname, anims, from_actions, uv_img_as_tex, sep_anim, a_only,
            STRF, CALC_TBS, TEXTURE_PROCESSOR, BAKE_LAYERS, \
            MERGE_ACTOR_MESH, APPLY_MOD, PVIEW, USED_MATERIALS, USED_TEXTURES, \
            USE_LOOP_NORMALS, EXPORT_PBS, FORCE_EXPORT_VERTEX_COLORS
-    imp.reload(sys.modules[lib_name + '.texture_processor'])
-    imp.reload(sys.modules[lib_name + '.utils'])
+    importlib.reload(sys.modules[lib_name + '.texture_processor'])
+    importlib.reload(sys.modules[lib_name + '.utils'])
     errors = []
     # === prepare to write ===
     FILE_PATH = fname
